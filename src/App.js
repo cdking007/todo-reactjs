@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import { v4 as uuid4 } from "uuid";
 import TodoList from "./components/Todolist.component";
 import TodoInput from "./components/TodoInput.component";
-import TodoItem from "./components/TodoItem.component";
 
 class App extends Component {
   state = {
@@ -19,13 +16,28 @@ class App extends Component {
       },
     ],
     item: "",
+    id: uuid4(),
     editMode: false,
   };
   handleChange = (e) => {
-    console.log("input changed");
+    this.setState({
+      item: e.target.value,
+    });
   };
-  handleSubmit = () => {
-    console.log("Handle Submit");
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const newItem = {
+      id: this.state.id,
+      title: this.state.item,
+    };
+    const updatedItems = [...this.state.items, newItem];
+
+    this.setState({
+      items: updatedItems,
+      item: "",
+      id: uuid4(),
+      editMode: false,
+    });
   };
   clearList = () => {
     console.log("CLear the list");
