@@ -5,16 +5,7 @@ import TodoInput from "./components/TodoInput.component";
 
 class App extends Component {
   state = {
-    items: [
-      {
-        id: 1,
-        title: "Wake up",
-      },
-      {
-        id: 2,
-        title: "Make Breakfast",
-      },
-    ],
+    items: [],
     item: "",
     id: uuid4(),
     editMode: false,
@@ -40,13 +31,31 @@ class App extends Component {
     });
   };
   clearList = () => {
-    console.log("CLear the list");
+    this.setState({
+      items: [],
+      item: "",
+      id: uuid4(),
+      editMode: false,
+    });
   };
   handleDelete = (id) => {
-    console.log(`Handle delete on id ${id}`);
+    const updatedItems = this.state.items.filter((item) => item.id !== id);
+    this.setState({
+      items: updatedItems,
+      item: "",
+      id: uuid4(),
+      editMode: false,
+    });
   };
   handleEdit = (id) => {
-    console.log(`Handle Edit on id ${id}`);
+    const updatedItems = this.state.items.filter((item) => item.id !== id);
+    const selectedItem = this.state.items.find((item) => item.id === id);
+    this.setState({
+      items: updatedItems,
+      item: selectedItem.title,
+      id: selectedItem.id,
+      editMode: true,
+    });
   };
   render() {
     return (

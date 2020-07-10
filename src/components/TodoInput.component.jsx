@@ -21,9 +21,22 @@ class TodoInput extends Component {
               onChange={handleChange}
             />
           </div>
-          <button className="btn btn-primary btn-block mt-3 text-uppercase">
-            Add Todo
-          </button>
+          {editItem === false && (
+            <button
+              className="btn btn-primary btn-block mt-3 text-uppercase"
+              disabled={item ? false : true}
+            >
+              Add Todo
+            </button>
+          )}
+          {editItem && (
+            <button
+              className="btn btn-success btn-block mt-3 text-uppercase"
+              disabled={item ? false : true}
+            >
+              Edit Todo
+            </button>
+          )}
         </form>
       </div>
     );
