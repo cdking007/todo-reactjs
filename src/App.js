@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { v4 as uuid4 } from "uuid";
 import TodoList from "./components/Todolist.component";
 import TodoInput from "./components/TodoInput.component";
 
-class App extends Component {
+class App extends React.Component {
   state = {
     items: [],
     item: "",
@@ -62,7 +62,7 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-10 mx-auto col-md-10 mt-2">
-            <h3 className="text-capitalize text-center"> Todo Input </h3>
+            <h3 className="text-capitalize text-center"> Enter your task </h3>
             <TodoInput
               item={this.state.item}
               handleChange={this.handleChange}

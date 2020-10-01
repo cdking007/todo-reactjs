@@ -24,9 +24,9 @@ class TodoInput extends Component {
           {editItem === false && (
             <button
               className="btn btn-primary btn-block mt-3 text-uppercase"
-              disabled={item ? false : true}
+              disabled={item.length > 1 ? false : true}
             >
-              Add Todo
+              Add Task
             </button>
           )}
           {editItem && (
@@ -34,7 +34,7 @@ class TodoInput extends Component {
               className="btn btn-success btn-block mt-3 text-uppercase"
               disabled={item ? false : true}
             >
-              Edit Todo
+              Edit Task
             </button>
           )}
         </form>

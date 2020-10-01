@@ -1,6 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Awesome-ToDoList - get orgnized 
+ orgnize your day to day tasks at one place. made with React.js
+
+### Available Scripts (devloper actions)
 
 In the project directory, you can run:
 
