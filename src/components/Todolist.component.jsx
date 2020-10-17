@@ -21,7 +21,7 @@ class TodoList extends React.Component {
         </ul>
         <button
           className="btn btn-block btn-danger text-uppercase"
-          onClick={clearList}
+          onClick={clearList} style={{width:'250px',margin:'auto'}}
         >
           Clear All Tasks
         </button>
