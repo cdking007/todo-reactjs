@@ -18,13 +18,13 @@ class TodoInput extends Component {
               className="form-control text-capitalize"
               placeholder="add todo item"
               value={item}
-              onChange={handleChange}
+              onChange={handleChange} 
             />
           </div>
           {editItem === false && (
             <button
               className="btn btn-primary btn-block mt-3 text-uppercase"
-              disabled={item.length > 1 ? false : true}
+              disabled={item.length > 1 ? false : true} style={{width:'250px',margin:'auto'}}
             >
               Add Task
             </button>
